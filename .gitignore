@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDEs & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Superpowers scratch
+.superpowers/
+
+# Data & Large Artifacts (Preserve structure, exclude big files)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Models & Reports (Track metadata/reports, ignore binary model weights if generated)
+models/*.joblib
+!models/.gitkeep
+models/metadata/*.json
+reports/figures/*
+!reports/figures/.gitkeep
