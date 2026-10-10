@@ -1,0 +1,21 @@
+{
+  "validation": {
+    "DummyBaseline": {
+      "val_mae_cycles": 55.363284140368854,
+      "val_rmse_cycles": 65.71544508456086
+    },
+    "HistGradientBoosting": {
+      "val_mae_cycles": 25.823827064394465,
+      "val_rmse_cycles": 35.250375601685235
+    },
+    "RandomForest": {
+      "val_mae_cycles": 25.867578799780226,
+      "val_rmse_cycles": 35.362855489598914
+    }
+  },
+  "test": {
+    "test_engines_count": 100,
+    "test_mae_cycles": 23.08730791767447,
+    "test_rmse_cycles": 32.18238940171405
+  }
+}

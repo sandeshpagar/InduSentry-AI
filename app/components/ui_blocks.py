@@ -19,7 +19,7 @@ def apply_theme_styling():
             border-right: 1px solid #384043;
         }
         
-        /* Metric card styling */
+        /* Metric container styling */
         div[data-testid="metric-container"] {
             background-color: #222729;
             border: 1px solid #384043;
@@ -29,7 +29,7 @@ def apply_theme_styling():
         }
         
         /* Accent styling for headers */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             color: #F3F6F7;
             font-weight: 600;
         }
@@ -46,6 +46,30 @@ def apply_theme_styling():
             background-color: #38C8CC;
             color: #101315;
             border-color: #38C8CC;
+        }
+        
+        /* Alert badges */
+        .alert-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .badge-high {
+            background-color: #381E1E;
+            color: #F06565;
+            border: 1px solid #F06565;
+        }
+        .badge-caution {
+            background-color: #382F1E;
+            color: #F0B44D;
+            border: 1px solid #F0B44D;
+        }
+        .badge-nominal {
+            background-color: #1E3827;
+            color: #43C887;
+            border: 1px solid #43C887;
         }
         </style>
         """,
@@ -116,3 +140,12 @@ def render_error_notice(errors: List[str]):
         """,
         unsafe_allow_html=True
     )
+
+
+def render_prediction_badge(alert_level: str) -> str:
+    """Returns HTML for an accessible status badge pairing color and label."""
+    if alert_level == "HIGH_ALERT":
+        return "<span class='alert-badge badge-high'>🔴 HIGH ALERT</span>"
+    elif alert_level == "CAUTION":
+        return "<span class='alert-badge badge-caution'>🟡 CAUTION</span>"
+    return "<span class='alert-badge badge-nominal'>🟢 NOMINAL</span>"
